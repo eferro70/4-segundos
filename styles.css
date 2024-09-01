@@ -78,3 +78,19 @@ footer {
     opacity: 1;
   }
 }
+
+.character {
+  display: flex;
+  align-items: center; /* Alinha verticalmente a imagem e o texto */
+  margin-bottom: 20px; /* Espaço entre os personagens */
+}
+
+.character img {
+  max-height: 200px; /* Limite da altura da imagem */
+  width: auto; /* Mantém a proporção da imagem */
+  margin-right: 20px; /* Espaço entre a imagem e o texto */
+}
+
+.character p {
+  flex: 1; /* Permite que o parágrafo ocupe o espaço restante */
+}
