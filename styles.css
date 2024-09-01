@@ -1,0 +1,80 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #1885ca;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+main {
+  padding: 20px;
+  margin: 20px;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #1885ca;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Estilo para o conteúdo do banner */
+.banner-content {
+  display: flex;
+  align-items: center;
+  height: 200px; /* Altura fixa do banner */
+  overflow: hidden;
+  position: relative;
+  background-color: #1885ca;
+  color: #fff;
+}
+
+.banner {
+  height: 100%; /* Ajusta a imagem para ocupar toda a altura do banner */
+  object-fit: contain; /* Garantir que a imagem se ajuste sem ser cortada */
+  animation: zoomOut 5s ease-in-out forwards; /* Animação de zoom out */
+}
+
+.text-content {
+  flex: 1;
+  padding: 20px;
+  opacity: 0; /* Esconde o texto inicialmente */
+  animation: fadeIn 5s ease-in-out forwards;
+  animation-delay: 3s; /* O texto aparece após a animação de zoom out */
+  text-align: left; /* Alinhar o texto à esquerda */
+}
+
+/* Definindo a animação de zoom out */
+@keyframes zoomOut {
+  0% {
+    transform-origin: bottom center;
+    transform: translateY(-100%) scale(20);
+  }
+  100% {
+    transform-origin: center center;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Animação para o fade-in do texto */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
