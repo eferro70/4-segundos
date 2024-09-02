@@ -79,18 +79,116 @@ footer {
   }
 }
 
-.character {
+.carousel {
+  position: relative;
+  width: 100%;
+  max-height: 200px; /* Ajuste conforme necessário */
+  overflow: hidden;
+}
+
+.carousel-content {
   display: flex;
-  align-items: center; /* Alinha verticalmente a imagem e o texto */
-  margin-bottom: 20px; /* Espaço entre os personagens */
+  transition: transform 0.5s ease-in-out;
 }
 
-.character img {
-  max-height: 200px; /* Limite da altura da imagem */
-  width: auto; /* Mantém a proporção da imagem */
-  margin-right: 20px; /* Espaço entre a imagem e o texto */
+.character {
+  flex: 0 0 100%;
+  display: flex;
+  box-sizing: border-box;
+  height: 100%;
 }
 
-.character p {
-  flex: 1; /* Permite que o parágrafo ocupe o espaço restante */
+.character-image {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center; /* Centraliza a imagem verticalmente */
+  justify-content: center; /* Centraliza a imagem horizontalmente */
+  overflow: hidden;
+}
+
+.character-image img {
+  max-width: 100%;
+  max-height: 200px; /* Garante que a imagem se ajuste à altura do contêiner */
+  object-fit: contain; /* Ajusta a imagem para não ser cortada */
+}
+
+.character-description {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden; /* Garante que o texto não ultrapasse a área visível */
+}
+
+.character-description p {
+  margin: 0;
+  text-align: left;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.carousel-excerpts {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.carousel-content-excerpts {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.excerpt {
+  min-width: 100%;
+  display: none;
+  padding: 20px;
+  box-sizing: border-box;
+  font-style: italic;
+  font-size: 1.2em;
+  text-align: left;
+}
+
+.prev-excerpts,
+.next-excerpts {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.prev-excerpts {
+  left: 0;
+}
+
+.next-excerpts {
+  right: 0;
+}
+
+.prev-excerpts:hover,
+.next-excerpts:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }

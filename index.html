@@ -76,49 +76,73 @@
 
       <section id="characters">
         <h2>Personagens Principais</h2>
-        <div class="character">
-          <img src="dario.png" alt="Dario Mendes" />
-          <p>
-            Dario: Um jovem extrovertirdo, inteligente e contestador, que guarda
-            um segredo espetacular. Ele se tornará um dos maiores craques a
-            vestir a camisa alvinegra do Vozão.
-          </p>
-        </div>
-        <div class="character">
-          <img src="dc.png" alt="DC Ribeiro" />
-          <p>
-            DC: Tímido, talentoso e apaixonado pelo futebol, quer levar o
-            Fortaleza às mais altas conquistas.
-          </p>
+        <div class="carousel">
+          <div class="carousel-content">
+            <div class="character active">
+              <div class="character-image">
+                <img src="dario.png" alt="Dario Mendes" />
+              </div>
+              <div class="character-description">
+                <p>
+                  <strong>Dario:</strong> Um jovem extrovertido, inteligente e
+                  contestador, que guarda um segredo espetacular. Ele se tornará
+                  um dos maiores craques a vestir a camisa alvinegra do Vozão.
+                </p>
+              </div>
+            </div>
+            <div class="character">
+              <div class="character-image">
+                <img src="dc.png" alt="DC Ribeiro" />
+              </div>
+              <div class="character-description">
+                <p>
+                  <strong>DC:</strong> Tímido, talentoso e apaixonado pelo
+                  futebol, quer levar o Fortaleza às mais altas conquistas.
+                </p>
+              </div>
+            </div>
+          </div>
+          <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+          <button class="next" onclick="moveSlide(1)">&#10095;</button>
         </div>
       </section>
 
       <section id="excerpts">
         <h2>Trechos do Livro</h2>
-        <blockquote>
-          "– Dario recebe pela esquerda... Passa o lateral em velocidade e leva
-          um marcador com ele... Dario não toca... Puxa pra dentro, vai bater...
-          Corta pra esquerda... Passou por um... Tá dentro da área... Corta para
-          direita, tirou o segundo marcador... Bateu de chapa no canto direito.
-          Gooooool! Golaço de Dario."
-        </blockquote>
-        <blockquote>
-          "O terceiro gol foi uma pintura, como dizem os cronistas. DC recebeu
-          lançamento em contra-ataque, driblou dois zagueiro, ameaçou bater na
-          saída do goleiro, mas preferiu driblar o goleiro e chutou para o gol
-          vazio. Dessa vez o narrador não fez trocadilhos, soletrou o nome de DC
-          pausadamente após gritar gol."
-        </blockquote>
+        <div class="carousel-excerpts">
+          <div class="carousel-content-excerpts">
+            <blockquote class="excerpt">
+              "– Dario recebe pela esquerda... Passa o lateral em velocidade e
+              leva um marcador com ele... Dario não toca... Puxa pra dentro, vai
+              bater... Corta pra esquerda... Passou por um... Tá dentro da
+              área... Corta para direita, tirou o segundo marcador... Bateu de
+              chapa no canto direito. Gooooool! Golaço de Dario."
+            </blockquote>
+            <blockquote class="excerpt">
+              "O terceiro gol foi uma pintura, como dizem os cronistas. DC
+              recebeu lançamento em contra-ataque, driblou dois zagueiros,
+              ameaçou bater na saída do goleiro, mas preferiu driblar o goleiro
+              e chutou para o gol vazio. Dessa vez o narrador não fez
+              trocadilhos, soletrou o nome de DC pausadamente após gritar gol."
+            </blockquote>
+          </div>
+          <button class="prev-excerpts" onclick="moveExcerpt(-1)">
+            &#10094;
+          </button>
+          <button class="next-excerpts" onclick="moveExcerpt(1)">
+            &#10095;
+          </button>
+        </div>
       </section>
 
       <section id="author">
         <h2>Sobre o Autor</h2>
         <p>
-          Escrito por Emmanuel Ferro, um nordestino nascido em Ipu, Ceará, em
-          1970. Em "4 segundos" usa o amor pelo futebol e a fantasia para
-          explorar temas pertinentes ao universo juvenil, como amizade,
-          autoconhecimento e a jornada rumo à maturidade, buscando assim, trazer
-          uma perspectiva estimulante e envolvente para os jovens leitores.
+          Emmanuel Ferro é um nordestino nascido em Ipu, Ceará, em 1970. Em "4
+          segundos" usa o amor pelo futebol e a fantasia para explorar temas
+          pertinentes ao universo juvenil, como amizade, autoconhecimento e a
+          jornada rumo à maturidade, buscando assim, trazer uma perspectiva
+          estimulante e envolvente para os jovens leitores.
         </p>
       </section>
 
@@ -135,12 +159,12 @@
       <section id="blog">
         <h2>Blog</h2>
         <article>
-          <h3>A Ética no Futebol Moderno</h3>
+          <h3>A desigualdade no futebol brasileiro</h3>
           <p>
-            Uma reflexão sobre os desafios éticos que o futebol enfrenta
-            atualmente.
+            Uma reflexão sobre os desafios para tornar o futebol brasileiro
+            justo e competitivo.
           </p>
-          <a href="etica.html">Leia Mais</a>
+          <a href="desigualdade.html">Leia Mais</a>
         </article>
         <article>
           <h3>Entrevista com Emmanuel Ferro</h3>
@@ -198,5 +222,7 @@
     <footer>
       <p>&copy; 2024 4 Segundos. Todos os direitos reservados.</p>
     </footer>
+    <script src="carousel-characters.js"></script>
+    <script src="carousel-excepts.js"></script>
   </body>
 </html>
