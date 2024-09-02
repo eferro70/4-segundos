@@ -1,5 +1,8 @@
+// Inicialização dos índices dos slides
 let currentIndex = 0;
+let currentExcerptIndex = 0;
 
+// Função para mover o carrossel de personagens
 function moveSlide(step) {
   const slides = document.querySelectorAll(".carousel .character");
   const totalSlides = slides.length;
@@ -19,29 +22,32 @@ function moveSlide(step) {
   }%)`;
 }
 
-// Inicializa o carrossel
-document.addEventListener("DOMContentLoaded", () => {
-  moveSlide(0);
-});
-
-let currentExcerptIndex = 0;
-const excerpts = document.querySelectorAll(".carousel-excerpts .excerpt");
-
+// Função para atualizar a visibilidade dos trechos
 function updateExcerptVisibility() {
+  const excerpts = document.querySelectorAll(".carousel-excerpts .excerpt");
   excerpts.forEach((excerpt, index) => {
     excerpt.style.display = index === currentExcerptIndex ? "block" : "none";
   });
 }
 
+// Função para mover o carrossel de trechos
 function moveExcerpt(direction) {
+  const excerpts = document.querySelectorAll(".carousel-excerpts .excerpt");
   currentExcerptIndex += direction;
+
+  // Faz o índice circular
   if (currentExcerptIndex < 0) {
     currentExcerptIndex = excerpts.length - 1;
   } else if (currentExcerptIndex >= excerpts.length) {
     currentExcerptIndex = 0;
   }
+
+  // Atualiza a visibilidade dos trechos
   updateExcerptVisibility();
 }
 
-// Initialize the display
-updateExcerptVisibility();
+// Inicializa o carrossel de personagens e trechos
+document.addEventListener("DOMContentLoaded", () => {
+  moveSlide(0); // Configura o carrossel de personagens
+  updateExcerptVisibility(); // Configura a visibilidade inicial dos trechos
+});
